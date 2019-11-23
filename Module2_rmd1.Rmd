@@ -2,7 +2,9 @@
 title: "Module2 - R Markdown Document 1"
 author: "Zaira"
 date: "23/11/2019"
-output: html_document
+output:
+  html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -40,23 +42,6 @@ Here are some example R commands:
 mean(c(1,2,3,4,5))
 
 ```
-
-
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-
-
-
-
-```{r cars}
-summary(cars)
-```
-
-
-
-
-
 
 Here is an example of a non-numbered list:
 
@@ -116,7 +101,12 @@ Here is an example of code in a blockquote:
 
 
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+
+```{r cars}
+summary(cars)
+```
 
 
 
@@ -129,3 +119,22 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r pressure2, echo=TRUE, fig.height=4, fig.width=4}
+plot(pressure)
+```
+
+
+## Insert Tables
+
+```{r}
+knitr::kable(head(cars))
+```
+
+
+## Insert an equation
+
+$$ Y = \beta_0 + \beta_1x $$
+
+
+
